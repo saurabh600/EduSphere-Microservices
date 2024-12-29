@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_service
+    username: root
+    password: saurabh123
+  jpa:
+    show-sql: true
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 0
+  servlet:
+    context-path: /api/users
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.cloud.client.hostname}:${random.value}
